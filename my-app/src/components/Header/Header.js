@@ -1,6 +1,6 @@
 import React from 'react'
 import './header.css'
-import logo from '../../assets/images/eco-logo.png'
+import logo from '../../assets/images/logo.png'
 import {motion} from 'framer-motion'
 import 'remixicon/fonts/remixicon.css'
 
@@ -31,7 +31,7 @@ const Header = () => {
           <div className='logo'>
             <img src={logo} alt="logo"></img>
             <div>
-              <h1>BERYL</h1>
+              <h1>ROSANITY</h1>
             </div>
           </div>
           <div className='navigation'>
