@@ -9,7 +9,7 @@ import brand from '../assets/images/brand.jpg'
 import {Container, Row,Col} from "reactstrap"
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import counterImg from '../assets/images/product-05.jpg'
+import counterImg from '../assets/images/product-05.png'
 
 const Home = () => {
   
