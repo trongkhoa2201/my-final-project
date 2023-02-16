@@ -31,3 +31,12 @@
 .hero__content{
     padding-top: 45px;
 }
+.timer_count{
+    background-color: var(--primary-color);
+    height: 300px;
+}
+.timer_count img{
+    width: 60% !important;
+    height: 60% !important;
+    object-fit: contain;
+}
