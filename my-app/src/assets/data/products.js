@@ -7,6 +7,9 @@ import productImg07 from "../images/product-07.jpg"
 import productImg08 from "../images/product-08.jpg"
 import productImg09 from "../images/product-09.jpg"
 
+import productImg11 from "../images/product-11.jpg"
+import productImg12 from "../images/product-12.png"
+
 const products = [
     {
       id: "01",
@@ -184,6 +187,53 @@ const products = [
       ],
       avgRating: 4.7,
     },
+
+    {
+      id: "11",
+      productName: "The Ordinary Mineral UV Filters SPF 30",
+      imgUrl: productImg11,
+      category: "New Collections",
+      price: 112,
+      shortDesc:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      reviews: [
+        {
+          rating: 4.6,
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        },
+        {
+          rating: 4.9,
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        },
+      ],
+      avgRating: 4.7,
+    },
+  
+    {
+      id: "12",
+      productName: "The Ordinary Mineral UV Filters SPF 30",
+      imgUrl: productImg12,
+      category: "New Collections",
+      price: 112,
+      shortDesc:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
+      description:
+        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio nostrum accusantium iste, voluptas cumque provident! Consequatur officiis animi rem tempore voluptate cumque hic similique aperiam ut consectetur distinctio repudiandae quia quam quos, quas illo, iusto, necessitatibus odio veniam exercitationem quis voluptatibus debitis laboriosam! Esse debitis obcaecati blanditiis at impedit quibusdam!",
+      reviews: [
+        {
+          rating: 4.6,
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        },
+        {
+          rating: 4.9,
+          text: "Lorem ipsum dolor sit amet consectetur adipisicing elit.",
+        },
+      ],
+      avgRating: 4.7,
+    },
+  
   
     
 ] 
