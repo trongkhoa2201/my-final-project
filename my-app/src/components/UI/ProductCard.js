@@ -21,7 +21,7 @@ const addToCart = () => {
   })
   )
 
-  toast.success('Product added Successfully')
+  toast.success('Product Added Successfully')
 }
   
   return (

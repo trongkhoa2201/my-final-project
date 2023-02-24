@@ -22,7 +22,7 @@ const Home = () => {
 
   useEffect(() => {
     const filterRecommendProducts = products.filter(item => item.category === 'Biossance')
-    const filterBestSalesProducts = products.filter(item => item.category === 'Best Sales')
+    const filterBestSalesProducts = products.filter(item => item.category === 'The Ordinary')
     const filterNewCollections = products.filter(item => item.category === 'New Collections')
 
 

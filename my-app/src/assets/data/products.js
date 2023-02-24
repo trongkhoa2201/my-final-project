@@ -100,7 +100,7 @@ const products = [
       id: "06",
       productName: "The Ordinary Salicylic Acid 2% Solution",
       imgUrl: productImg06,
-      category: "Best Sales",
+      category: "The Ordinary",
       price: 99,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -123,7 +123,7 @@ const products = [
       id: "07",
       productName: "The Ordinary 100% L-Ascorbic Acid Powde",
       imgUrl: productImg07,
-      category: "Best Sales",
+      category: "The Ordinary",
       price: 173,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -146,7 +146,7 @@ const products = [
       id: "08",
       productName: "The Ordinary AHA 30% BHA 2% Peeling Solution",
       imgUrl: productImg08,
-      category: "Best Sales",
+      category: "The Ordinary",
       price: 89,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -169,7 +169,7 @@ const products = [
       id: "09",
       productName: "The Ordinary Mineral UV Filters SPF 30",
       imgUrl: productImg09,
-      category: "Best Sales",
+      category: "The Ordinary",
       price: 112,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
