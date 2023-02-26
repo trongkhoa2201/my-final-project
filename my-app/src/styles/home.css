@@ -17,7 +17,7 @@
 .hero__img img{
     border-radius: 10px;
 }
-.buy_btn{
+.buy__btn{
     border: none;
     outline: none;
     padding: 8px 20px;
@@ -28,7 +28,7 @@
     font-size: 1rem;
     margin-top: 40px;
 }
-.buy_btn a:hover{
+.buy__btn a:hover{
     color: #fff;
 }
 .hero__content{
