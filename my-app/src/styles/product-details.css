@@ -89,6 +89,6 @@
         font-style: 1.3rem;
     }
     .rating__group{
-        column-gap: 0.5rem;
+        column-gap: 1rem !important;
     }
 }
