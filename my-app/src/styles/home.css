@@ -1,5 +1,5 @@
 .hero__section{
-    background-color:#F2E7D5;
+    background-color: #D2CEC3;
 }
 .hero__section h2{
     color: var(--primary-color);
@@ -35,7 +35,7 @@
     padding-top: 45px;
 }
 .timer_count{
-    background-color: var(--primary-color);
+    background-color: #314343;
     height: 350px;
 }
 .timer_count img{
@@ -54,6 +54,23 @@
 }
 .store__btn a:hover{
     color: var(--primary-color);
+}
+.routine__section{
+    background: #314343;
+    height: 500px;
+}
+.routine__content h4{   
+    color: #ffffffca;
+    margin-left: 50px;
+    margin-bottom: 10px;
+}
+.routine__content p{
+    color: #ffffffca;
+    margin-top: 5px;
+}
+.routine__content h6{
+    color: coral;   
+    margin-top: 5px; 
 }
 
 @media only screen and (max-width: 992px) {

@@ -11,6 +11,7 @@ import {Container, Row,Col} from "reactstrap"
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import counterImg from '../assets/images/product-10.png'
+import routine from '../assets/images/routine.png'
 
 const Home = () => {
   
@@ -52,6 +53,34 @@ const Home = () => {
 
           </Row>
         </Container>
+    </section>
+    
+    <section  className='routine__section'>
+      <Container>
+        <Row>
+          <Col lg='6' md='6'>
+            <div className='routine__content'>
+            <h4>How to use :</h4>
+            <h6>01.</h6>
+            <p>Clean Your Skin: Cleanser or Micellar Water</p>
+            <h6>02.</h6>
+            <p>Toner and Essence: Toner first, then Essence</p>
+            <h6>03.</h6>
+            <p>Serums and Actives: Alternate your Retinol and Vitamin C</p>
+            <h6>04.</h6>
+            <p>Eye Cream: Apply eye cream to reduce the appearance of fine lines and wrinkles</p>
+            <h6>05.</h6>
+            <p>Moisturize: Always make sure to moisturize your skin! Choose the best one for your skin type</p>
+            </div>  
+          </Col>
+
+          <Col lg='6' md='6'>
+            <div className='routine__img'>
+              <img src={routine} alt='routine'></img>
+            </div>
+          </Col>
+        </Row>
+      </Container>
     </section>
     <Services/>
     <section className='recommend__products' >

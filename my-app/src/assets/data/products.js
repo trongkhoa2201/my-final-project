@@ -13,7 +13,7 @@ import productImg12 from "../images/product-12.png"
 const products = [
     {
       id: "01",
-      productName: "SQUALANE + 10% LACTIC ACID RESURFACING SERUM",
+      productName: "Squalane + 10% lactic acid resurfacing serum",
       imgUrl: productImg01,
       category: "Biossance",
       price: 65,
@@ -31,7 +31,7 @@ const products = [
     },
     {
       id: "02",
-      productName: "SQUALANE + ANTIOXIDANT CLEANSING OIL",
+      productName: "Squalane + Antioxidant cleansing oil",
       imgUrl: productImg02,
       category: "Biossance",
       price: 65,
@@ -54,7 +54,7 @@ const products = [
   
     {
       id: "03",
-      productName: "SQUALANE + VITAMIN C DARK SPOT SERUM",
+      productName: "Squalane + Vitamin C dark spot serum",
       imgUrl: productImg03,
       category: "Biossance",
       price: 51.80,
@@ -76,7 +76,7 @@ const products = [
     },
     {
       id: "04",
-      productName: "SQUALANE + PHYTO-RETINOL SERUM",
+      productName: "Squalane + Phyto-retinol serum",
       imgUrl: productImg04,
       category: "Biossance",
       price: 32,
@@ -213,7 +213,7 @@ const products = [
   
     {
       id: "12",
-      productName: "The Ordinary Mineral UV Filters SPF 30",
+      productName: "Biossance Rapid Radiance Set",
       imgUrl: productImg12,
       category: "New Collections",
       price: 112,

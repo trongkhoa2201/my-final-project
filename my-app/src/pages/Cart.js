@@ -50,7 +50,7 @@ const Cart = () => {
                 <span className='fs-4 fw-bold'>${totalAmount}</span>
                 </h6>
               </div>
-              <p className='fs-6 mt-2'>Taxes and shipping fee will calculate in checkout</p>
+              <p className='fs-6 mt-2'>Estimated Delivery & Handling Fees Will Calculate In Checkout</p>
               <div>
                 <button className='buy__btn w-100'><Link to='/checkout'>Check Out</Link></button>
 
