@@ -77,19 +77,15 @@
     position: absolute;
     top: 90%;
     left: 0;
-    width: 100px;
+    width: 142px;
     z-index: 10;
-    padding: 15px;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    background-color: #D2CEC3;
+    text-align: center;
+    padding: 15px;   
+    background: #D2CEC3;
     line-height: 30px;
-    display: none;
-    cursor: pointer;
 }
 .show__profileActions{
-    display: block;
+    display: none;
 }
 .mobile__menu {
     font-size: 1.3rem;
