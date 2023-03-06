@@ -1,98 +1,106 @@
-.hero__section{
+.hero-section{
     background-color: #D2CEC3;
 }
-.hero__section h2{
-    color: var(--primary-color);
+.hero-section h2{
+    color: #000000c7;
     font-size: 2.5rem;
     font-weight: 600;
     margin: 20px 0px;
 }
-.hero__section p{
+.hero-section p{
     color: var(--primary-color);
     line-height: 28px;
 }
-.hero__section p:nth-child(1){
+.hero-section p:nth-child(1){
     font-weight: 500;
 }
-.hero__img img{
+.hero-img img{
+    width: 100%;
     border-radius: 10px;
 }
-.buy__btn{
+.buy-btn{
     border: none;
     outline: none;
     padding: 8px 20px;
-    border-radius: 5px;
-    background: var(--primary-color);
+    background: coral;
     color: #fff;
     cursor: pointer;
     font-size: 1rem;
     margin-top: 40px;
+    font-weight: bold;
+    width: 150px;
+    height: 50px;
 }
-.buy__btn a:hover{
+.buy-btn a:hover{
     color: #fff;
 }
-.hero__content{
+.hero-content{
     padding-top: 45px;
 }
-.timer_count{
+.timer-count{
     background-color: #314343;
     height: 350px;
 }
-.timer_count img{
+.timer-count img{
     width: 65% !important;
     height: 65% !important;
     object-fit: contain;
 }
-.store__btn{
+.store-btn{
     width: 150px;
     height: 40px;
-    border-radius: 10px;
     margin-top: 80px;
     background: #fff;
-    color: var(--primary-color);
-    font-weight: 600;
+    color: coral;
+    font-weight: bold;
+    width: 150px;
+    height: 50px;
+    outline: 2px solid coral;
 }
-.store__btn a:hover{
+.store-btn a:hover{
     color: var(--primary-color);
 }
-.routine__section{
+.routine-section{
     background: #314343;
     height: 500px;
 }
-.routine__content h4{   
+.routine-content h4{   
     color: #ffffffca;
     margin-left: 50px;
     margin-bottom: 10px;
 }
-.routine__content p{
+.routine-content p{
     color: #ffffffca;
     margin-top: 5px;
 }
-.routine__content h6{
+.routine-content h6{
     color: coral;   
     margin-top: 5px; 
 }
+.routine-section img{
+    width: 100%;
+}
 
 @media only screen and (max-width: 992px) {
-    .hero__content h2 {
+    .hero-content h2 {
         font-size: 2rem;
     }
-    .section__title{
+    .section-title{
         font-size: 1.7rem;
     }
-    .counter__img{
+    .counter-img{
         display: none;
     }
-    .clock__top-content{
+    .clock-top-content{
         text-align: center;
     }
-    .clock__top-content h4{
+    .clock-top-content h4{
         font-size: 0.9rem !important;
     }
-    .clock__top-content h3{
+    .clock-top-content h3{
         font-size: 1rem !important;
     }
-    .count__down-col{
+    .count-down-col{
         text-align: center;
     }
 }

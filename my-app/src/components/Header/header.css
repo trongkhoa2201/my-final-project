@@ -16,6 +16,7 @@
 .logo img{
     width: 40px;
     height: 40px;
+    margin-bottom: 10px;
 }
 .logo h1{
     font-size: 1.2rem;
@@ -150,7 +151,7 @@
     .logo{
         font-size: 1rem;
     }
-    .fav__iconi, .cart__icon i{
+    .fav__icon i, .cart__icon i{
         font-style: 1.2rem !important;
     }
     .nav__icons span img{

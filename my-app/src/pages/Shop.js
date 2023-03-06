@@ -47,7 +47,7 @@ const Shop = () => {
       <Container>
         <Row>
           <Col lg='3' md='6'>
-            <div className='filter__widget'>
+            <div className='filter-widget'>
                 <select onChange={handleFilter}>
                   <option>Filter by Category</option>
                   <option value='Biossance'>Biossance</option>
@@ -57,7 +57,7 @@ const Shop = () => {
             </div>
           </Col>
           <Col lg='3' md='6' className='text-end'>
-          <div className='filter__widget'>
+          <div className='filter-widget'>
                 <select>
                   <option>Sort by</option>
                   <option value='ascending'>Ascending</option>
@@ -66,7 +66,7 @@ const Shop = () => {
             </div>
           </Col>
           <Col lg='6' md='12'>
-            <div className='search__box'>
+            <div className='search-box'>
               <input type='text' placeholder='Search' onChange={handleSearch}></input>
               <span><i class="ri-search-line"></i></span>
             </div>

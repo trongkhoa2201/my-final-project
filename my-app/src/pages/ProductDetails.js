@@ -63,13 +63,15 @@ const ProductDetails = () => {
         <Container>
           <Row>
             <Col lg='6'>
-              <img src={imgUrl} alt=''/>
+              <div className='product-img'>
+                <img src={imgUrl} alt=''/>
+              </div>
             </Col>
               
             <Col lg='6'>
-            <div className='product__details'>
+            <div className='product-details'>
                 <h2>{productName}</h2>
-                <div className='product__rating d-flex align-items-center gap-5 mb-3'>
+                <div className='product-rating d-flex align-items-center gap-5 mb-3'>
                   <div>
                     <span><i class="ri-star-s-fill"></i></span>
                     <span><i class="ri-star-s-fill"></i></span>
@@ -81,12 +83,12 @@ const ProductDetails = () => {
                   <p>(<span>{avgRating}</span> ratings)</p>
                 </div>
                 <div className='d-flex align-items-center gap-5'>
-                  <span className='product__price'>${price}</span>
+                  <span className='product-price'>${price}</span>
                   <span>Category: {category.toUpperCase()}</span>
                 </div>
                 <p className='mt-3'>{shortDesc}</p>
 
-                <motion.button whileTap={{scale:1.2}} className='buy__btn' onClick={addToCart}>Add to Cart</motion.button>
+                <motion.button whileTap={{scale:1.2}} className='buy-btn' onClick={addToCart}>Add to Cart</motion.button>
               </div>
             </Col>
           </Row>
@@ -97,16 +99,16 @@ const ProductDetails = () => {
         <Container>
           <Row>
             <Col lg='12'>
-              <div className='tab__wrapper d-flex align-items-center gap-5'>
+              <div className='tab-wrapper d-flex align-items-center gap-5'>
                 <h6 className={`${tab==='desc' ? 'active__tab'  : ''}`} onClick={() => setTab('desc')}>Description</h6>
                 <h6 className={`${tab==='rev' ? 'active__tab'  : ''}`} onClick={() => setTab('rev')}>Reviews ({reviews.length})</h6>
               </div>
 
               {
-                tab ==='desc' ? ( <div className='tab__content mt-5'>
+                tab ==='desc' ? ( <div className='tab-content mt-5'>
                   <p>{description}</p>
-                </div> ) : ( <div className='product__review mt-5'>
-                  <div className='review__wrapper'>
+                </div> ) : ( <div className='product-review mt-5'>
+                  <div className='review-wrapper'>
                     <ul>
                       {
                         reviews?.map((item, index) => (
@@ -118,13 +120,13 @@ const ProductDetails = () => {
                       }
                     </ul>
 
-                    <div className='review__form'>
+                    <div className='review-form'>
                       <h4>Leave your experience</h4>
                       <form action='' onSubmit={submitHandler}>
-                        <div className='form__group'>
+                        <div className='form-group'>
                           <input type='text' placeholder='Enter name' ref={reviewUser} required/>
                         </div>
-                        <div className='form__group d-flex align-items-center gap-5 rating__group'>
+                        <div className='form-group d-flex align-items-center gap-5 rating__group'>
                           <motion.span whileTap={{scale: 1.2}} onClick={() => setRating(1)}>1<i class="ri-star-s-fill"></i></motion.span>
                           <motion.span whileTap={{scale: 1.2}} onClick={() => setRating(2)}>2<i class="ri-star-s-fill"></i></motion.span>
                           <motion.span whileTap={{scale: 1.2}} onClick={() => setRating(3)}>3<i class="ri-star-s-fill"></i></motion.span>
@@ -132,11 +134,11 @@ const ProductDetails = () => {
                           <motion.span whileTap={{scale: 1.2}} onClick={() => setRating(5)}>5<i class="ri-star-s-fill"></i></motion.span>
                         </div>
 
-                        <div className='form__group'>
+                        <div className='form-group'>
                           <textarea ref={reviewMsg} rows={4} type='text' placeholder='Review Product' required/>
                         </div>
 
-                        <motion.button whileTap={{scale: 1.2}} type='submit' className='buy__btn'>submit</motion.button>
+                        <motion.button whileTap={{scale: 1.2}} type='submit' className='buy-btn'>submit</motion.button>
                       </form>
                     </div>
                   </div>

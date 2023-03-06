@@ -1,6 +1,5 @@
 import React, {useState ,useEffect} from 'react'
 import '../styles/home.css'
-import Services from '../services/Services'
 import ProductList from '../components/UI/ProductList'
 import products from '../assets/data/products'
 import Clock from '../components/UI/Clock'
@@ -32,21 +31,21 @@ const Home = () => {
     setNewCollections(filterNewCollections)
   },[])
   return <Helmet title ={'Home'}>
-      <section className='hero__section'>
+      <section className='hero-section'>
         <Container>
           <Row>
             <Col lg='6' md='6'>
-            <div className='hero__content'>
-              <p className='hero__subtitle'>Trending Product in {year}</p>
+            <div className='hero-content'>
+              <p className='hero-subtitle'>Trending Product in {year}</p>
             </div>
             <h2>Make Your Interior More Minimalistics & Modern</h2>
             <p>Your skin is the largest organ of your body. It plays a crucial role in protecting your internal organs therefore making it an important organ that you have to maintain by all means.
                This requires a good understanding of good skincare products and their benefits as well as how negative products can harm your skin.</p>
 
-            <motion.button whileTap={{scale:1.2}} className='buy_btn'><Link to='/shop'>SHOP NOW</Link></motion.button>
+            <motion.button whileTap={{scale:1.2}} className='buy-btn'><Link to='/shop'>SHOP NOW</Link></motion.button>
             </Col>
             <Col lg='6' md='6'>
-            <div className='hero__img'>
+            <div className='hero-img'>
             <img src={brand} alt="brand"></img>
             </div>
             </Col>
@@ -55,11 +54,21 @@ const Home = () => {
         </Container>
     </section>
     
-    <section  className='routine__section'>
+    <section>
+      <Container>
+        <Row>
+          <Col>
+          
+          </Col>
+        </Row>
+      </Container>
+    </section>
+
+    <section  className='routine-section'>
       <Container>
         <Row>
           <Col lg='6' md='6'>
-            <div className='routine__content'>
+            <div className='routine-content'>
             <h4>How to use :</h4>
             <h6>01.</h6>
             <p>Clean Your Skin: Cleanser or Micellar Water</p>
@@ -75,31 +84,31 @@ const Home = () => {
           </Col>
 
           <Col lg='6' md='6'>
-            <div className='routine__img'>
+            <div className='routine-img'>
               <img src={routine} alt='routine'></img>
             </div>
           </Col>
         </Row>
       </Container>
     </section>
-    <Services/>
-    <section className='recommend__products' >
+
+    <section className='recommend-products' >
     <Container>
           <Row>
             <Col lg='12' className='text-center'>
-              <h2 className='section__title'>Recommended</h2>
-              <p className='section__recommend'>Complete your routine with </p>
+              <h2 className='section-title'>Recommended</h2>
+              <p className='section-recommend'>Complete your routine with </p>
             </Col>
             <ProductList data={recommendProducts}/>
           </Row>
         </Container>
     </section>
 
-    <section className='best__sales'>
+    <section className='best-sales'>
       <Container>
       <Row>
             <Col lg='12' className='text-center'>
-            <h2 className='section__title'>Best Sales</h2>
+            <h2 className='section-title'>Best Sales</h2>
             </Col>
 
             <ProductList data={bestSalesProducts}/>
@@ -107,20 +116,20 @@ const Home = () => {
       </Container>
     </section>
 
-    <section className='timer_count'>
+    <section className='timer-count'>
     <Container>
       <Row>
-            <Col lg='6' md='12' className='count__down-col'>
-              <div className='clock__top-content'>
+            <Col lg='6' md='12' className='count-down-col'>
+              <div className='clock-top-content'>
                 <h4 className='text-white fs-6 mb-2'>Limited Offers</h4>
                 <h3 className='text-white fs-6 mb-3'>Speacial Product</h3>
               </div>
               <Clock/>
 
-              <motion.button whileTap={{scale:1.2}} className='buy__btn store__btn'><Link to='/shop'>Visit Store</Link></motion.button>
+              <motion.button whileTap={{scale:1.2}} className='buy-btn store-btn'><Link to='/shop'>Visit Store</Link></motion.button>
             </Col>
 
-            <Col lg='6' md='12' className='text-end counter__img'>
+            <Col lg='6' md='12' className='text-end counter-img'>
             <img src={counterImg} alt=''/>
             </Col>
 
@@ -132,7 +141,7 @@ const Home = () => {
       <Container>
           <Row>
             <Col lg='12' className='text-center'>
-                <h2 className='section__title'>New Collections</h2>
+                <h2 className='section-title'>New Collections</h2>
               </Col>
               <ProductList data={newCollections}/>
           </Row>

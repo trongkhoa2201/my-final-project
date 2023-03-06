@@ -43,16 +43,16 @@ const Login = () => {
                   <Col lg='6' className='m-auto text-center'>
                 <h3 className='fw-bold mb-4'>Login</h3>
 
-                <Form className='auth__form' onSubmit={signIn}>
-                  <FormGroup className='form__group'>
+                <Form className='auth-form' onSubmit={signIn}>
+                  <FormGroup className='form-group'>
                     <input type='email' placeholder='Enter your email' value={email} onChange={(e) => setEmail(e.target.value)}/>
                   </FormGroup>
 
-                  <FormGroup className='form__group'>
+                  <FormGroup className='form-group'>
                     <input type='password' placeholder='Enter your password' value={password} onChange={(e) => setPassword(e.target.value)}/>
                   </FormGroup>
 
-                  <button type='submit' className='buy__btn auth__btn'>Login</button>
+                  <button type='submit' className='buy-btn auth-btn'>Login</button>
                   <p>Don't have an account? <Link to='/signup'>Create an account</Link></p>
                 </Form>
               </Col>
