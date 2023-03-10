@@ -29,23 +29,20 @@ const Signup = () => {
     e.preventDefault()
     setLoading(true)
 
+    console.log("username:", username);
+    console.log("file:", file);
+
     try{
-      const userCredential = await createUserWithEmailAndPassword(
-        auth, 
-        email, 
-        password
-        )
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password)
 
       const user = userCredential.user
       const storageRef = ref(storage, `images/${Date.now() + username}`)
-      const uploadTask = uploadBytesResumable(storageRef, file)
+      const uploadPhoto = uploadBytesResumable(storageRef, file)
 
-      uploadTask.on(
-        (error) => {
+      uploadPhoto.on((error) => {
         toast.error(error.message)
-      }, 
-      () => {
-        getDownloadURL(uploadTask.snapshot.ref).then(async(downloadURL) => {
+      }, () => {
+        getDownloadURL(uploadPhoto.snapshot.ref).then(async(downloadURL) => {
            // update user profile
           await updateProfile(user,{
             displayName: username,
@@ -95,7 +92,9 @@ const Signup = () => {
                     </FormGroup>
 
                     <FormGroup>
+                      <div className='file-input'>
                       <input type='file' onChange={e => setFile(e.target.files[0])}/>
+                      </div>
                     </FormGroup>
 
 

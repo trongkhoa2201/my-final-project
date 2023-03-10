@@ -15,5 +15,8 @@
     color: coral;
 }
 .auth-form input[type ='file']{
-    color: #fff;
+    color: #000;
+}
+.file-input{
+    margin-right: 300px;
 }

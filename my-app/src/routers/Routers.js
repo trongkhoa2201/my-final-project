@@ -9,6 +9,7 @@ import Shop from '../pages/Shop'
 import Signup from '../pages/Signup'
 import ProtectRoute from './ProtectRoute'
 
+
 const Routers = () => {
   return <Routes>
     <Route path='/' element={<Navigate to={'home'}/>} />

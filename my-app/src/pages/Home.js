@@ -21,8 +21,8 @@ const Home = () => {
   const year = new Date().getFullYear()
 
   useEffect(() => {
-    const filterRecommendProducts = products.filter(item => item.category === 'Biossance')
-    const filterBestSalesProducts = products.filter(item => item.category === 'The Ordinary')
+    const filterRecommendProducts = products.filter(item => item.category === 'Recommend')
+    const filterBestSalesProducts = products.filter(item => item.category === 'Best Sales')
     const filterNewCollections = products.filter(item => item.category === 'New Collections')
 
 
@@ -54,15 +54,6 @@ const Home = () => {
         </Container>
     </section>
     
-    <section>
-      <Container>
-        <Row>
-          <Col>
-          
-          </Col>
-        </Row>
-      </Container>
-    </section>
 
     <section  className='routine-section'>
       <Container>
