@@ -20,3 +20,29 @@
 .file-input{
     margin-right: 300px;
 }
+.google-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    padding: 10px;
+    margin-left: 200px;
+    width: 250px;
+    background: coral;
+}
+.google-form span i{
+    align-items: center;
+    justify-content: center;
+    column-gap: 5px;
+    cursor: pointer;
+    font-size: 20px;
+    color: #fff;
+    margin-right: 10px;
+}
+.btn-google{
+    border: none;
+    background: coral;
+    color: #fff;
+    font-weight: 600;
+}

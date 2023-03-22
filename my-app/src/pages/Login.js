@@ -8,6 +8,7 @@ import { auth } from '../firebase.config'
 import {toast} from 'react-toastify'
 import { getDoc, doc } from 'firebase/firestore'
 import {db} from '../firebase.config'
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 const Login = () => {
 
@@ -41,6 +42,22 @@ const Login = () => {
     }
   }
 
+  const signInWithGoogle = async () => {
+    try {
+      const provider = new GoogleAuthProvider();
+      const result = await signInWithPopup(auth, provider);
+      const user = result.user;
+  
+      console.log(user)
+      toast.success('Successfully logged in with Google')
+      navigate('/home')
+    }
+      catch(error){
+        toast.error(error.message)
+      }
+  }
+
+
   return ( <Helmet title='Login'>
         <section>
           <Container>
@@ -61,6 +78,14 @@ const Login = () => {
 
                   <button type='submit' className='buy-btn auth-btn'>Login</button>
                   <p>Don't have an account? <Link to='/signup'>Create an account</Link></p>
+                  <div className='google-form'>
+                  <span><i class="ri-google-fill"></i></span>
+                  <button 
+                  class="btn-google" 
+                  type="button" 
+                  onClick={signInWithGoogle}>
+                  Sign in with Google</button>
+                  </div>
                 </Form>
               </Col>
                 )
