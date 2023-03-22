@@ -19,8 +19,7 @@ const products = [
       id: "01",
       productName: "Squalane + 10% lactic acid resurfacing serum",
       imgUrl: productImg01,
-      category: "Recommend",
-      brand:"Biossance",
+      category: "Biossance",
       price: 65,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -38,8 +37,7 @@ const products = [
       id: "02",
       productName: "Squalane + Antioxidant cleansing oil",
       imgUrl: productImg02,
-      category: "Recommend",
-      brand:"Biossance",
+      category: "Biossance",
       price: 65,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -62,8 +60,7 @@ const products = [
       id: "03",
       productName: "Squalane + Vitamin C dark spot serum",
       imgUrl: productImg03,
-      category: "Recommend",
-      brand:"Biossance",
+      category: "Biossance",
       price: 51.80,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -85,8 +82,7 @@ const products = [
       id: "04",
       productName: "Squalane + Phyto-retinol serum",
       imgUrl: productImg04,
-      category: "Recommend",
-      brand:"Biossance",
+      category: "Biossance",
       price: 32,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -108,8 +104,7 @@ const products = [
       id: "06",
       productName: "The Ordinary Salicylic Acid 2% Solution",
       imgUrl: productImg06,
-      category: "Best Sales",
-      brand:"The Ordinary",
+      category: "The Ordinary",
       price: 99,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -132,8 +127,7 @@ const products = [
       id: "07",
       productName: "The Ordinary 100% L-Ascorbic Acid Powde",
       imgUrl: productImg07,
-      category: "Best Sales",
-      brand:"The Ordinary",
+      category: "The Ordinary",
       price: 173,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -156,8 +150,7 @@ const products = [
       id: "08",
       productName: "The Ordinary AHA 30% BHA 2% Peeling Solution",
       imgUrl: productImg08,
-      category: "Best Sales",
-      brand:"The Ordinary",
+      category: "The Ordinary",
       price: 89,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -180,8 +173,7 @@ const products = [
       id: "09",
       productName: "The Ordinary Mineral UV Filters SPF 30",
       imgUrl: productImg09,
-      category: "Best Sales",
-      brand:"The Ordinary",
+      category: "The Ordinary",
       price: 112,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -205,7 +197,6 @@ const products = [
       productName: "The Ordinary Mineral UV Filters SPF 30",
       imgUrl: productImg11,
       category: "New Collections",
-      brand:"The Ordinary",
       price: 112,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -229,7 +220,6 @@ const products = [
       productName: "Biossance Rapid Radiance Set",
       imgUrl: productImg12,
       category: "New Collections",
-      brand:"Biossance",
       price: 112,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -252,8 +242,7 @@ const products = [
       id: "13",
       productName: "Squalane + probiotic gel moisturizer",
       imgUrl: productImg13,
-      category: "Best Sales",
-      brand:"Biossance",
+      category: "Biossance",
       price: 112,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -275,8 +264,7 @@ const products = [
       id: "14",
       productName: "The Ordinary Natural Moisturizing Factor + HA",
       imgUrl: productImg14,
-      category: "Recommend",
-      brand:"The Ordinary",
+      category: "The Ordinary",
       price: 112,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",
@@ -298,8 +286,7 @@ const products = [
       id: "15",
       productName: "Squalane + bha pore-minimizing toner",
       imgUrl: productImg15,
-      category: "Recommend",
-      brand:"Biossance",
+      category: "Biossance",
       price: 112,
       shortDesc:
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequuntur iure quas illo voluptates labore tempore!",

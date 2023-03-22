@@ -1,7 +1,6 @@
 import React, {useState ,useEffect} from 'react'
 import '../styles/home.css'
 import ProductList from '../components/UI/ProductList'
-import products from '../assets/data/products'
 import Clock from '../components/UI/Clock'
 
 import Helmet from '../components/Helmet/Helmet'
@@ -12,7 +11,11 @@ import { motion } from 'framer-motion'
 import counterImg from '../assets/images/product-10.png'
 import routine from '../assets/images/routine.png'
 
+import useGetData from '../custom-hooks/useGetData'
+
 const Home = () => {
+
+  const{data: products, loading} = useGetData('products')
   
   const[recommendProducts, setRecommendProducts] = useState()
   const[bestSalesProducts, setBestSalesProducts] = useState()
@@ -21,15 +24,15 @@ const Home = () => {
   const year = new Date().getFullYear()
 
   useEffect(() => {
-    const filterRecommendProducts = products.filter(item => item.category === 'Recommend')
-    const filterBestSalesProducts = products.filter(item => item.category === 'Best Sales')
+    const filterRecommendProducts = products.filter(item => item.category === 'Biossance')
+    const filterBestSalesProducts = products.filter(item => item.category === 'The Ordinary')
     const filterNewCollections = products.filter(item => item.category === 'New Collections')
 
 
     setRecommendProducts(filterRecommendProducts)
     setBestSalesProducts(filterBestSalesProducts)
     setNewCollections(filterNewCollections)
-  },[])
+  },[products])
   return <Helmet title ={'Home'}>
       <section className='hero-section'>
         <Container>
@@ -90,7 +93,10 @@ const Home = () => {
               <h2 className='section-title'>Recommended</h2>
               <p className='section-recommend'>Complete your routine with </p>
             </Col>
-            <ProductList data={recommendProducts}/>
+            {
+              loading ? (<h5 className='fw-bold'>Loading</h5>) : (<ProductList data={recommendProducts}/>)
+            }
+            
           </Row>
         </Container>
     </section>
@@ -101,8 +107,9 @@ const Home = () => {
             <Col lg='12' className='text-center'>
             <h2 className='section-title'>Best Sales</h2>
             </Col>
-
-            <ProductList data={bestSalesProducts}/>
+            {
+              loading ? (<h5 className='fw-bold'>Loading</h5>) : (<ProductList data={bestSalesProducts}/>)
+            }
           </Row>
       </Container>
     </section>
@@ -134,7 +141,9 @@ const Home = () => {
             <Col lg='12' className='text-center'>
                 <h2 className='section-title'>New Collections</h2>
               </Col>
-              <ProductList data={newCollections}/>
+              {
+                loading ? (<h5 className='fw-bold'>Loading</h5>) : (<ProductList data={newCollections}/>)
+              }
           </Row>
       </Container>
     </section>

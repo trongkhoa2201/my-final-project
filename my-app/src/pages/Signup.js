@@ -22,6 +22,7 @@ const Signup = () => {
   const [password, setPassword] = useState('')
   const [file, setFile] = useState(null)
   const [loading, setLoading] = useState(false)
+  const [role, setRole] = useState('user')
 
   const navigate = useNavigate()
 
@@ -54,6 +55,7 @@ const Signup = () => {
             displayName: username,
             email,
             photoURL: downloadURL,
+            role: "user",
           })
         })
       })
@@ -89,6 +91,14 @@ const Signup = () => {
 
                     <FormGroup className='form-group'>
                       <input type='password' placeholder='Enter your password' value={password} onChange={e => setPassword(e.target.value)}/>
+                    </FormGroup>
+
+                    <FormGroup>
+                      <label>Role:</label>
+                      <select value={role} onChange={e => setRole(e.target.value)}>
+                        <option value="user">User</option>
+                        <option value="admin">Admin</option>
+                      </select>
                     </FormGroup>
 
                     <FormGroup>

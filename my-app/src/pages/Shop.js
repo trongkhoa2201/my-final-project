@@ -14,13 +14,13 @@ const Shop = () => {
   const handleFilter = e => {
     const filterValue = e.target.value
     if(filterValue==='Biossance'){
-      const filteredProducts = products.filter(item => item.brand === 'Biossance')
+      const filteredProducts = products.filter(item => item.category === 'Biossance')
 
       setProductsData(filteredProducts)
     }
 
     if(filterValue==='The Ordinary'){
-      const filteredProducts = products.filter(item => item.brand === 'The Ordinary')
+      const filteredProducts = products.filter(item => item.category === 'The Ordinary')
 
       setProductsData(filteredProducts)
     }

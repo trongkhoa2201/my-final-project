@@ -1,0 +1,16 @@
+.revenue-box, .orders-box, .products-box, .users-box{
+    padding: 20px;
+    border-radius: 5px;
+    background: #D2CEC3;
+}
+.revenue-box h5, .orders-box h5, .products-box h5, .users-box h5{
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #314343;
+    margin-bottom: 20px;
+}
+.revenue-box span, .orders-box span, .products-box span, .users-box span{
+    color: #314343;
+    font-weight: 600;
+    font-size: 2rem;
+}

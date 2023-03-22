@@ -6,6 +6,8 @@ import '../styles/login.css'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../firebase.config'
 import {toast} from 'react-toastify'
+import { getDoc, doc } from 'firebase/firestore'
+import {db} from '../firebase.config'
 
 const Login = () => {
 
@@ -21,13 +23,18 @@ const Login = () => {
 
     try{
       const userCredential = await signInWithEmailAndPassword(auth, email, password)
-      
       const user = userCredential.user
+      const userDoc = await getDoc(doc(db, "users", userCredential.user.uid))
+      const role = userDoc.data().role // Truy vấn giá trị trường role từ cơ sở dữ liệu
 
       console.log(user)
       setLoading(false)
       toast.success('Successfully logged in')
-      navigate('/checkout')
+      if(role === "admin"){ // Kiểm tra nếu role là admin thì điều hướng đến trang admin
+        navigate('/dashboard')
+      }else{ // Nếu role là user thì điều hướng đến trang chính
+        navigate('/')
+      }
     } catch(error){
       setLoading(false)
       toast.error(error.message)
