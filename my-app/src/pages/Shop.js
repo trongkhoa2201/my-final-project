@@ -56,16 +56,8 @@ const Shop = () => {
                 </select>
             </div>
           </Col>
-          <Col lg='3' md='6' className='text-end'>
-          <div className='filter-widget'>
-                <select>
-                  <option>Sort by</option>
-                  <option value='ascending'>Ascending</option>
-                  <option value='descending'>Descending</option>
-                </select>
-            </div>
-          </Col>
-          <Col lg='6' md='12'>
+
+          <Col lg='9' md='12'>
             <div className='search-box'>
               <input type='text' placeholder='Search' onChange={handleSearch}></input>
               <span><i class="ri-search-line"></i></span>
