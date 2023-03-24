@@ -62,3 +62,30 @@
 .active-admin-menu{
     background: whitesmoke;
 }
+.profile img {
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+    border-radius: 50%;
+}
+.profile{
+    position: relative;
+    z-index: 9;
+}
+.profile .profile__actions{
+    position: absolute;
+    top: 180%;
+    left: 0;
+    width: 130px;
+    z-index: 10;
+    text-align: center;
+    padding: 15px;   
+    background: #D2CEC3;
+    line-height: 30px;
+}
+.show__profileActions{
+    display: none;
+}
+.nav__active {
+    font-weight: 700 !important;
+}
