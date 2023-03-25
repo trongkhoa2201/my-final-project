@@ -2,6 +2,7 @@ import React,{useState} from 'react'
 import Helmet from '../components/Helmet/Helmet'
 import {Container, Row, Col, Form, FormGroup} from 'reactstrap'
 import {Link, useNavigate} from 'react-router-dom'
+import { motion } from "framer-motion"
 import '../styles/login.css'
 import { signInWithEmailAndPassword } from 'firebase/auth'
 import { auth } from '../firebase.config'
@@ -76,15 +77,16 @@ const Login = () => {
                     <input type='password' placeholder='Enter your password' value={password} onChange={(e) => setPassword(e.target.value)}/>
                   </FormGroup>
 
-                  <button type='submit' className='buy-btn auth-btn'>Login</button>
+                  <motion.button whileTap={{scale:1.2}} type='submit' className='buy-btn auth-btn'>Login</motion.button>
                   <p>Don't have an account? <Link to='/signup'>Create an account</Link></p>
                   <div className='google-form'>
                   <span><i class="ri-google-fill"></i></span>
-                  <button 
+                  <motion.button 
+                  whileTap={{scale:1.2}}
                   class="btn-google" 
                   type="button" 
                   onClick={signInWithGoogle}>
-                  Sign in with Google</button>
+                  Sign in with Google</motion.button>
                   </div>
                 </Form>
               </Col>

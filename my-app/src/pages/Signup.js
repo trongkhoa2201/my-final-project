@@ -4,6 +4,7 @@ import {Container, Row, Col, Form, FormGroup} from 'reactstrap'
 import {Link} from 'react-router-dom'
 import '../styles/login.css'
 import { useNavigate } from 'react-router-dom'
+import { motion } from "framer-motion"
 
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import {ref, uploadBytesResumable, getDownloadURL} from 'firebase/storage'
@@ -108,7 +109,7 @@ const Signup = () => {
                     </FormGroup>
 
 
-                    <button type='submit' className='buy-btn auth-btn'>Sign Up</button>
+                    <motion.button whileTap={{scale:1.2}} type='submit' className='buy-btn auth-btn'>Sign Up</motion.button>
                     <p>Already have an account? <Link to='/login'>Login</Link></p>
                   </Form>
                 </Col>

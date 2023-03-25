@@ -2,12 +2,14 @@ import React, {useState, useEffect} from 'react'
 import Helmet from '../components/Helmet/Helmet';
 import { Container, Row, Col} from 'reactstrap';
 import '../styles/profile.css'
+import { motion } from "framer-motion"
 
 import { auth, storage } from '../firebase.config';
 import { doc, updateDoc } from 'firebase/firestore';
 import { db } from '../firebase.config';  
 import { toast } from 'react-toastify';  
 import {ref, uploadBytesResumable, getDownloadURL} from 'firebase/storage'
+import { updateProfile } from 'firebase/auth'
 
 const Profile = () => {
 
@@ -15,6 +17,7 @@ const Profile = () => {
     const [displayName, setDisplayName] = useState('');
     const [email, setEmail] = useState('');
     const [file, setFile] = useState(null)
+    const [photoURL, setPhotoURL] = useState('');
 
     useEffect(() => {
         const unsubscribe = auth.onAuthStateChanged(async (user) => {
@@ -23,11 +26,13 @@ const Profile = () => {
             setDisplayName(user.displayName);
             setEmail(user.email);
             setFile(null);
+            setPhotoURL(user.photoURL || '')
         } else {
             setUser('');
             setDisplayName('');
             setEmail('');
             setFile('');
+            setPhotoURL('');
         }
         });
     
@@ -49,12 +54,12 @@ const Profile = () => {
             photoURL: downloadURL,
             email: email,
         });
-        setUser({ ...user, displayName: displayName, photoURL: downloadURL });
-        await user.updateProfile({
+        await updateProfile(user,{
             displayName: displayName,
             photoURL: downloadURL,
             email: email,
         });
+        setUser({ ...user, displayName: displayName, photoURL: downloadURL });
         toast.success('Profile updated successfully');
         } catch (error) {
         toast.error(error.message);
@@ -73,7 +78,7 @@ return (
                 <h3 className='mb-4 fw-bold'>Profile</h3>
                 <Col lg='5' md='6'>
                     <div className='profile-image'>
-                        <img src={user?.photoURL} alt={user?.displayName} />
+                        <img src={photoURL} alt={user?.displayName} />
                         <div className='file-input'>
                         <input type='file' onChange={(e) => setFile(e.target.files[0])}/>
                         </div>
@@ -98,7 +103,7 @@ return (
                         onChange={handleInputChange}
                         className='profile-input'
                         />
-                        <button type="submit" className='buy-btn'>Update</button>
+                        <motion.button whileTap={{scale:1.2}} type="submit" className='buy-btn'>Update</motion.button>
                         </form>
                     </div>
                 </Col>
