@@ -3,6 +3,7 @@ import { Container, Row, Col, Form, FormGroup} from 'reactstrap'
 import Helmet from '../components/Helmet/Helmet'
 import CommonSection from '../components/UI/CommonSection'
 import { useSelector } from 'react-redux'
+import CheckoutWithPaypal from './CheckoutWithPaypal'
 
 import '../styles/checkout.css'
 
@@ -10,6 +11,11 @@ const Checkout = () => {
 
   const totalQty = useSelector(state => state.cart.totalQuantity)
   const totalAmount = useSelector(state => state.cart.totalAmount)
+
+  const product = {
+    description: 'Check',
+    price: 100,
+  }
 
   return <Helmet title='Checkout'>
     <CommonSection title='Checkout'/>
@@ -55,6 +61,7 @@ const Checkout = () => {
               </h6>
               <h4>Total Cost: <span>${totalAmount}</span></h4>
               <button className='buy-btn auth-btn w-100'>Place an order</button> 
+              <CheckoutWithPaypal product={product} />
             </div>               
           </Col>
         </Row>
