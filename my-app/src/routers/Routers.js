@@ -13,11 +13,14 @@ import AllProducts from '../admin/AllProducts'
 import Dashboard from '../admin/Dashboard'
 import Users from '../admin/Users'
 import Profile from '../pages/Profile'
+import Orders from '../admin/Orders'
+import {PayPalScriptProvider } from '@paypal/react-paypal-js'
 
 
 
 const Routers = () => {
-  return <Routes>
+  return  <PayPalScriptProvider options={{"client-id": process.env.REACT_APP_PAYPAL_CLIENT_ID}}>
+  <Routes>
     <Route path='/' element={<Navigate to={'home'}/>} />
     <Route path='home' element={<Home/>} />
     <Route path='shop/:id' element={<ProductDetails/>} />
@@ -28,12 +31,14 @@ const Routers = () => {
       <Route path='dashboard/all-products' element={<AllProducts/>}/>
       <Route path='dashboard/add-product' element={<AddProduct/>}/>
       <Route path='dashboard/users' element={<Users/>}/>
+      <Route path='dashboard/orders' element={<Orders/>}/>
     </Route>
     <Route path='checkout' element={<Checkout/>}/>
     <Route path='login' element={<Login/>} />
     <Route path='signup' element={<Signup/>} />
     <Route path='profile' element={<Profile/>}/>
   </Routes>
+  </PayPalScriptProvider> 
 };
 
 export default Routers

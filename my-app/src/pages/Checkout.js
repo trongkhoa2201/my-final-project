@@ -12,9 +12,10 @@ const Checkout = () => {
   const totalQty = useSelector(state => state.cart.totalQuantity)
   const totalAmount = useSelector(state => state.cart.totalAmount)
 
+
   const product = {
-    description: 'Check',
-    price: 100,
+    description: 'Checkout',
+    price: totalAmount,
   }
 
   return <Helmet title='Checkout'>
@@ -60,7 +61,7 @@ const Checkout = () => {
                 <span>$0</span>
               </h6>
               <h4>Total Cost: <span>${totalAmount}</span></h4>
-              <button className='buy-btn auth-btn w-100'>Place an order</button> 
+              <hr></hr>
               <CheckoutWithPaypal product={product} />
             </div>               
           </Col>
