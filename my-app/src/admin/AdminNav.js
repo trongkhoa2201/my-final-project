@@ -20,8 +20,8 @@ const admin_nav = [
         path:'/dashboard/all-products'
     },
     {
-        display:'Orders',
-        path:'/dashboard/orders'
+        display:'Manage Orders',
+        path:'/dashboard/manage-orders'
     },
     {
         display:'Users',
@@ -29,7 +29,7 @@ const admin_nav = [
     },
     {
         display:'Add-Product',
-        path:'/dashboard/Add-Product'
+        path:'/dashboard/add-Product'
     },
 ]
 

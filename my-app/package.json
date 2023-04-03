@@ -9,8 +9,15 @@
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
     "bootstrap": "^5.2.3",
+    "buffer": "^6.0.3",
+    "crypto-browserify": "^3.12.0",
     "firebase": "^9.17.2",
     "framer-motion": "^9.0.2",
+    "https-browserify": "^1.0.0",
+    "path-browserify": "^1.0.1",
+    "paypal-node-sdk": "^2.0.3",
+    "paypal-rest-sdk": "^1.8.1",
+    "querystring-es3": "^0.2.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-google-charts": "^4.0.0",
@@ -21,6 +28,7 @@
     "reactstrap": "^9.1.5",
     "remixicon": "^2.5.0",
     "remixicon-react": "^1.0.0",
+    "stream-http": "^3.2.0",
     "web-vitals": "^2.1.4"
   },
   "scripts": {

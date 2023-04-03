@@ -61,10 +61,10 @@ const Signup = () => {
         })
       })
 
-     setLoading(false) 
-     toast.success('Account created')
-     navigate('/login')
-     console.log(user)
+      setLoading(false) 
+      toast.success('Account created')
+      navigate('/login')
+      console.log(user)
     }catch(error){
       setLoading(false)
       toast.error('Something went wrong!!!')

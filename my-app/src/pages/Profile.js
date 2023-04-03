@@ -95,7 +95,7 @@ return (
                         onChange={handleInputChange}
                         className='profile-input'
                         />
-                        <h6 class='profile-subtitle'>Password :</h6>
+                        <h6 class='profile-subtitle'>Email :</h6>
                         <input
                         type="text"
                         placeholder="Enter your display name"

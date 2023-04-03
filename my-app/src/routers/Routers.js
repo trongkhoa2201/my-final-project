@@ -7,13 +7,14 @@ import Login from '../pages/Login'
 import ProductDetails from '../pages/ProductDetails'
 import Shop from '../pages/Shop'
 import Signup from '../pages/Signup'
+import Order from '../pages/Order'
 import ProtectRoute from './ProtectRoute'
 import AddProduct from '../admin/AddProduct'
 import AllProducts from '../admin/AllProducts'
 import Dashboard from '../admin/Dashboard'
 import Users from '../admin/Users'
 import Profile from '../pages/Profile'
-import Orders from '../admin/Orders'
+import ManageOrders from '../admin/ManageOrders'
 import {PayPalScriptProvider } from '@paypal/react-paypal-js'
 
 
@@ -31,12 +32,13 @@ const Routers = () => {
       <Route path='dashboard/all-products' element={<AllProducts/>}/>
       <Route path='dashboard/add-product' element={<AddProduct/>}/>
       <Route path='dashboard/users' element={<Users/>}/>
-      <Route path='dashboard/orders' element={<Orders/>}/>
+      <Route path='dashboard/manage-orders' element={<ManageOrders/>}/>
     </Route>
     <Route path='checkout' element={<Checkout/>}/>
     <Route path='login' element={<Login/>} />
     <Route path='signup' element={<Signup/>} />
     <Route path='profile' element={<Profile/>}/>
+    <Route path='order' element={<Order/>}/>
   </Routes>
   </PayPalScriptProvider> 
 };
