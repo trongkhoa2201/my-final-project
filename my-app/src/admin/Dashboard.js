@@ -9,7 +9,7 @@ import useGetData from '../custom-hooks/useGetData'
 import { Chart } from "react-google-charts";
 
 const Dashboard = () => {
-
+  // Sử dụng hook custom để lấy dữ liệu từ Firebase
   const{data: products} = useGetData('products')
   const{data: users} = useGetData('users')
   const{data: orders} = useGetData('orders')
@@ -29,7 +29,7 @@ const Dashboard = () => {
 
     getTotalSales();
   }, []);
-
+  // Dữ liệu biểu đồ
   const salesByDay = [
     ["Day", "Sales"],
     ...ordersData.map((order) => {
@@ -86,7 +86,7 @@ const Dashboard = () => {
               options={{
                 hAxis: {
                   title: "Day",
-                  format: "dd MMM yyyy", // Hiển thị dưới dạng dd/MM/yyyy (VD: 02/04/2023)
+                  format: "dd MMM yyyy", // Hiển thị dưới dạng dd/MM/yyyy
                   textStyle: { color: "#333" },
                   titleTextStyle: { color: "#333" },
                 },

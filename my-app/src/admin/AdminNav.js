@@ -40,7 +40,6 @@ const AdminNav = () => {
     const profileActionRef = useRef(null)
     const headerRef = useRef(null)
 
-    const menuRef = useRef(null)
     
     const logout = () => {
         signOut(auth).then(()=>{
@@ -51,7 +50,6 @@ const AdminNav = () => {
         })
     }
 
-    const menuToggle = () => menuRef.current.classList.toggle('active__menu')
 
     const toggleProfileActions = () => profileActionRef.current.classList.toggle('show__profileActions')
 
@@ -60,13 +58,23 @@ const AdminNav = () => {
             <header className='admin-header' ref={headerRef}>
                     <div className='admin-nav-top'>
                         <Container>
+                            <Row>
                             <div className='admin-nav-wrapper-top'>
                                 <div className='logo'>
                                     <h2>ROSANITY</h2>
                                 </div>
 
-                                <div className='search-box'>
-                                    <input type='text' placeholder='Search'/>
+                                <div className='admin-navigation-middle'>
+                                    <ul className='admin-menu-list-middle'>
+                                        {
+                                            admin_nav.map((item, index) => (
+                                                <li className='admin-menu-item' key={index}>
+                                                    <NavLink to={item.path} className={navClass => navClass.isActive ? 
+                                                    'active-admin-menu' : ''}>{item.display}</NavLink>
+                                                </li>
+                                            ))
+                                        }
+                                    </ul>
                                 </div>
                                 
                                 <div className='admin-nav-top-right'>
@@ -99,40 +107,12 @@ const AdminNav = () => {
                                     </div>
                                     </div>
                                 </div>
-
-                                {/* <div className='navigation' ref={menuRef} onClick={menuToggle}>
-                                <ul className='menu'>
-                                {
-                                    admin_nav.map((item , index) =>(<li className='nav__item' key={index}>
-                                    <NavLink to={item.path} className={(navClass)=> navClass.isActive ? 'nav__active' : ''}>{item.display}</NavLink>
-                                </li>))
-                                }
-                                </ul>
-                                </div> */}
                             </div>
-
+                            </Row>
                         </Container>
                     </div>
             </header>
 
-            <section className='admin-menu p-0'>
-                <Container>
-                    <Row>
-                        <div className='admin-navigation'>
-                            <ul className='admin-menu-list'>
-                                {
-                                    admin_nav.map((item, index) => (
-                                        <li className='admin-menu-item' key={index}>
-                                            <NavLink to={item.path} className={navClass => navClass.isActive ? 
-                                            'active-admin-menu' : ''}>{item.display}</NavLink>
-                                        </li>
-                                    ))
-                                }
-                            </ul>
-                        </div>
-                    </Row>
-                </Container>
-            </section>
         </>
     )
 }
