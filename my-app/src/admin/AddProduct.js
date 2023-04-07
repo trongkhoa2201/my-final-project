@@ -59,8 +59,6 @@ const AddProduct = () => {
             <Col lg='12'>
                 {
                     loading ? <h4 className='py-5'>Loading</h4> : <>
-                    
-                    <h4 className='mb-5'>Add Product</h4>
                     <Form onSubmit={addProduct}>
                         <FormGroup className='form-group'>
                             <span>Product title</span>

@@ -1,32 +1,40 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 
 import CommonSection from '../components/UI/CommonSection'
 import Helmet from '../components/Helmet/Helmet'
 import { Container, Row, Col } from 'reactstrap'
 import '../styles/shop.css'
-import products from '../assets/data/products'
 import ProductList from '../components/UI/ProductList'
+import useGetData from '../custom-hooks/useGetData'
 
 const Shop = () => {
   
-  const [productsData, setProductsData] = useState(products)
+  const{data: products} = useGetData('products')
+
+  const[allProducts, setAllProducts] = useState([])
+  const[productsData, setProductsData] = useState([])
+
+  useEffect(() => {
+    setAllProducts(products)
+    setProductsData(products)
+  }, [products])
 
   const handleFilter = e => {
     const filterValue = e.target.value
     if(filterValue==='Biossance'){
-      const filteredProducts = products.filter(item => item.category === 'Biossance')
+      const filteredProducts = allProducts.filter(item => item.category === 'Biossance')
 
       setProductsData(filteredProducts)
     }
 
     if(filterValue==='The Ordinary'){
-      const filteredProducts = products.filter(item => item.category === 'The Ordinary')
+      const filteredProducts = allProducts.filter(item => item.category === 'The Ordinary')
 
       setProductsData(filteredProducts)
     }
 
     if(filterValue==='New Collections'){
-      const filteredProducts = products.filter(item => item.category === 'New Collections')
+      const filteredProducts = allProducts.filter(item => item.category === 'New Collections')
 
       setProductsData(filteredProducts)
     }
@@ -35,7 +43,7 @@ const Shop = () => {
   const handleSearch = e => {
     const searchTerm = e.target.value
 
-    const searchedProducts = products.filter(item => item.productName.toLowerCase().includes(searchTerm.toLowerCase()))
+    const searchedProducts = allProducts.filter(item => item.productName.toLowerCase().includes(searchTerm.toLowerCase()))
 
     setProductsData(searchedProducts)
   }
@@ -69,10 +77,12 @@ const Shop = () => {
 
     <section className='pt-0'>
       <Container>
-        <Row>
-          {
-            productsData.length === 0? <h1 className='text-center fs-4'>No products are found!</h1> : <ProductList data={productsData}/>
-          }
+        <Row>          
+            {products && products.length > 0 ? (
+              <ProductList data={productsData} />
+            ) : (
+              <h1 className='text-center fs-4'>No products are found!</h1>
+            )}
         </Row>
       </Container>
     </section>

@@ -1,89 +1,62 @@
-import { useEffect, useState } from 'react';
-import { PayPalButtons } from '@paypal/react-paypal-js';
-import { toast } from 'react-toastify';
-import { db } from "../firebase.config";
+import React from 'react'
+import { Container, Row, Col } from 'reactstrap'
+import { db } from '../firebase.config'
+import { doc, deleteDoc } from 'firebase/firestore'
+import useGetData from '../custom-hooks/useGetData'
+import {toast} from 'react-toastify'
+import moment from 'moment';
 
 const ManageOrders = () => {
-  
-  const [orders, setOrders] = useState([]);
 
-  useEffect(() => {
-    const fetchOrders = async () => {
-     // call your API to fetch the list of orders from your server
-      const ordersSnapshot = await db.collection('orders').get();
-      const ordersData = ordersSnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setOrders(ordersData);
-    };
-    fetchOrders();
-  }, []);
+  const{data:ordersData, loading} = useGetData('orders')
 
-  const handleApprove = async (orderID) => {
-    // call your API to mark the order as approved and update the status on your server
-    try {
-      const response = await fetch(`/api/orders/${orderID}/approve`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
-      if (response.ok) {
-        const updatedOrders = orders.map((order) => {
-          if (order.orderID === orderID) {
-            return {
-              ...order,
-              status: 'approved',
-            };
-          }
-          return order;
-        });
-        setOrders(updatedOrders);
-        toast.success('Order approved!');
-      } else {
-        toast.error('Unable to approve order. Please try again later.');
-      }
-    } catch (error) {
-      toast.error('Unable to approve order. Please try again later.');
-    }
-  };
+  const deleteProduct = async(id) => {
+    await deleteDoc(doc(db, 'orders', id))
+    toast.success('Delete Successfully')
+  }
+
 
   return (
-    <div>
-    <h1>Orders</h1>
-    <ul>
-      {orders.map((order) => (
-        <li key={order.orderID}>
-          <p>Order ID: {order.orderID}</p>
-          <p>Status: {order.status}</p>
-          <p>Total: ${order.total}</p>
-          <p>Customer Name: {order.customerName}</p>
-          <p>Customer Email: {order.customerEmail}</p>
-          <div>
-            <PayPalButtons
-              createOrder={(data, actions) => {
-                return actions.order.create({
-                  purchase_units: [
-                    {
-                      amount: {
-                        currency_code: 'USD',
-                        value: order.total,
-                      },
-                    },
-                  ],
-                });
-              }}
-              onApprove={(data, actions) => {
-                handleApprove(data.orderID);
-              }}
-            />
-          </div>
-        </li>
-      ))}
-    </ul>
-  </div>
-);
-};
+    <section>
+    <Container className='order-container'>
+      <Row>
+        <Col lg='12'>
+        <table className='table'>
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Date</th>
+                  <th>Customer Name</th>
+                  <th>Items</th>
+                  <th>Total Amount</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+              {
+                  loading ? <h4 className='py-5 text-center fw-bold'>Loading</h4> :
+                    (ordersData.map(item=>{
+                      const createdAt = item.createdAt.toDate();
+                      const formattedDate = moment(createdAt).format("DD/MM/YYYY");
+                      return (
+                        <tr key={item.id}>
+                          <td>{item.id}</td>
+                          <td>{formattedDate}</td>
+                          <td>{item.name}</td>
+                          <td>{item.totalQty}</td>
+                          <td>${item.totalAmount}</td>
+                          <td><button onClick={() => {deleteProduct(item.id)}} className='btn btn-danger'>Delete</button></td>
+                        </tr>
+                      )
+                    }))
+                  }                
+              </tbody>
+            </table>
+        </Col>
+      </Row>
+    </Container>
+    </section>
+  )
+}
 
-export default ManageOrders;
+export default ManageOrders

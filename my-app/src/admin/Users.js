@@ -18,16 +18,15 @@ const Users = () => {
     <section>
         <Container>
             <Row>
-                <Col lg='12' className='fw-bold'>
-                    <h4>Users</h4>
-                </Col>
-                <Col lg='12' className='pt-5'>
+                <Col lg='12'>
                     <table className='table'>
                         <thead>
-                            <th>Image</th>
-                            <th>Username</th>
-                            <th>Email</th>
-                            <th>Action</th>
+                            <tr>
+                                <th>Image</th>
+                                <th>Username</th>
+                                <th>Email</th>
+                                <th>Action</th>
+                            </tr>
                         </thead>
 
                         <tbody>
