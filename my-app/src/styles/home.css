@@ -1,22 +1,31 @@
-.hero-section{
-    background-color: #D2CEC3;
+.content-section{
+    width: 100%;
+    height: 90vh;
+    background: url('../assets/images/top-view-frame-with-bath-items-wooden-background.jpg');
+    background-size: cover;
+    background-position: 70%;
+    background-repeat: no-repeat;
+    padding: 0;
 }
-.hero-section h2{
+.content-section h2{
     color: #000000c7;
-    font-size: 2.5rem;
+    font-size: 2.0rem;
     font-weight: 600;
     margin: 20px 0px;
+    width: 500px;
 }
-.hero-section p{
+.content-section p{
     color: var(--primary-color);
     line-height: 28px;
+    width: 600px;
 }
-.hero-section p:nth-child(1){
+.content-section p:nth-child(1){
     font-weight: 500;
 }
-.hero-img img{
-    width: 100%;
-    border-radius: 10px;
+.content{
+    position: relative;
+    top: 200px;
+    margin-left: 100px;
 }
 .buy-btn{
     border: none;
@@ -82,11 +91,17 @@
 }
 
 @media only screen and (max-width: 992px) {
-    .hero-content h2 {
+    .content-section h2 {
         font-size: 2rem;
+        width: 400px;
     }
-    .section-title{
+    .content-section{
         font-size: 1.7rem;
+    }
+    .content{
+        position: relative;
+        top: 450px;
+        margin-left: 50px;
     }
     .counter-img{
         display: none;
@@ -106,25 +121,34 @@
 }
 
 @media only screen and (max-width: 768px) {
-    .hero__content h2 {
-        font-size: 1.6rem;
+    .content-section h2 {
+        font-size: 1.2rem;
     }
-    .hero__content p {
-        font-size: 0.9rem;
+    .content-section p {
+        font-size: 0.7rem;
+        width: 400px;
     }
-
+    .content{
+        position: relative;
+        top: 300px;
+        margin-left: 50px;
+    }
     .buy_btn a{
-        font-size: 0.9rem;
-    }
-
-    .section__title{
-        font-size: 1.4rem;
+        font-size: 0.7rem;
     }
 }
 
 @media only screen and (max-width: 576px) {
-    .hero__content h2 {
-        padding-top: 0;
-        margin-bottom: 40px;
+    .content-section h2 {
+        font-size: 1.0rem;
+    }
+    .content-section p {
+        font-size: 0.5rem;
+        width: 400px;
+    }
+    .content{
+        position: relative;
+        top: 200px;
+        margin-left: 50px;
     }
 }

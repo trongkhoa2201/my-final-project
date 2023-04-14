@@ -1,5 +1,5 @@
-import React from 'react'
-import { Container, Row, Col } from 'reactstrap'
+import React, {useState} from 'react'
+import { Container, Row, Col, Pagination, PaginationItem,PaginationLink } from 'reactstrap'
 import { db } from '../firebase.config'
 import { doc, deleteDoc } from 'firebase/firestore'
 import useGetData from '../custom-hooks/useGetData'
@@ -8,12 +8,30 @@ import moment from 'moment';
 
 const ManageOrders = () => {
 
+  const [currentPage, setCurrentPage] = useState(0);
+  const pageSize = 5;
+
   const{data:ordersData, loading} = useGetData('orders')
 
   const deleteProduct = async(id) => {
     await deleteDoc(doc(db, 'orders', id))
     toast.success('Delete Successfully')
   }
+
+  const handleClick = (e, index) => {
+    e.preventDefault();
+    setCurrentPage(index);
+  };
+
+  const pageCount = Math.ceil(ordersData.length / pageSize);
+  const pages = [...Array(pageCount).keys()];
+
+  const startIndex = currentPage * pageSize;
+
+  const selectedProducts = ordersData.slice(
+    startIndex,
+    startIndex + pageSize
+  );
 
 
   return (
@@ -35,7 +53,7 @@ const ManageOrders = () => {
               <tbody>
               {
                   loading ? <h4 className='py-5 text-center fw-bold'>Loading</h4> :
-                    (ordersData.map(item=>{
+                    (selectedProducts.map(item=>{
                       const createdAt = item.createdAt.toDate();
                       const formattedDate = moment(createdAt).format("DD/MM/YYYY");
                       return (
@@ -52,6 +70,32 @@ const ManageOrders = () => {
                   }                
               </tbody>
             </table>
+
+            <Pagination aria-label="Product navigation" className='pagination justify-content-center mt-4'>
+              <PaginationItem disabled={currentPage <= 0}>
+                <PaginationLink
+                  onClick={(e) => handleClick(e, currentPage - 1)}
+                  previous
+                  href="#"
+                />
+              </PaginationItem>
+
+              {pages.map((index) => (
+                <PaginationItem active={currentPage === index} key={index}>
+                  <PaginationLink onClick={(e) => handleClick(e, index)} href="#">
+                    {index + 1}
+                  </PaginationLink>
+                </PaginationItem>
+              ))}
+
+              <PaginationItem disabled={currentPage >= pageCount - 1}>
+                <PaginationLink
+                  onClick={(e) => handleClick(e, currentPage + 1)}
+                  next
+                  href="#"
+                />
+              </PaginationItem>
+            </Pagination>
         </Col>
       </Row>
     </Container>
