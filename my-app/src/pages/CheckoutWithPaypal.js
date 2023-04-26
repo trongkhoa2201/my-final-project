@@ -25,10 +25,10 @@ const CheckoutWithPaypal = (props) => {
     return(
         <PayPalButtons
         onClick={(data, actions) => {
-            const hasAlreadyBoughtCourse = false
+            const hasAlreadyBoughtProduct = false
 
-            if(hasAlreadyBoughtCourse){
-                setError("You already bought this course. Go to your account to view your list of courses")
+            if(hasAlreadyBoughtProduct){
+                setError("You already bought this Product. Go to your account to view your list of Product")
             return actions.reject()
             }else{
                 return actions.resolve()
